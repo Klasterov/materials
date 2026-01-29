@@ -72,8 +72,6 @@
   gap: 8px;
 }
 
-
-
 .reviews__content{
     width: 864px;
 }
@@ -132,5 +130,14 @@
   .reviews__sidebar {
     border-right: none;
     padding-right: 0;
+    width: 100%;
+  }
+
+  .reviews__content {
+    width: 100%;
+  }
+
+  .button--large{
+    width: 95%;
   }
 }
