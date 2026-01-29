@@ -1,0 +1,27 @@
+.crumbs{
+    line-height: 1.5;
+    color: #949494;
+    font-size: 1rem;
+}
+.crumbs__list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.crumbs__point{
+    margin: 2px 8px 2px 0;
+}
+.crumbs__link{
+    color: #949494;
+    border-bottom: 1px solid #d01c20;
+}
+.crumbs__point::after{
+    content: "/";
+    margin-left: 8px;
+}
+.crumbs__point:last-child{
+    margin-right: 0;
+}
+.crumbs__point:last-child::after{
+    content: "";
+    margin: 0;
+}
