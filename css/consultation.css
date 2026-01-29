@@ -1,1 +1,32 @@
-.consultation{position:relative;color:#ffffff;text-shadow:0 0 15px rgba(0,0,0,0.5)}.consultation__body{position:relative;text-align:center}.consultation__back{position:absolute;left:0;right:0;top:0;bottom:0;background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed}.consultation__back::before{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background-color:rgba(0,0,0,0.5)}.consultation p{color:#ffffff}
+.consultation{
+    position:relative;
+    color:#ffffff;
+    text-shadow:0 0 15px rgba(0,0,0,0.5)
+}
+.consultation__body{
+    position:relative;
+    text-align:center
+}
+.consultation__back{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background: url(../images/shutterstock_397011061-2-1900x-5b4.jpeg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed
+}
+.consultation__back::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.5)
+}.consultation p{
+    color:#ffffff
+}
