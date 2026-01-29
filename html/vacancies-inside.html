@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta property="og:url" content="https://special-materials.com//">
@@ -454,20 +453,28 @@ html body .template__section .container .content p>em>img{
 	</nav>
 </header>
 
-<section class="vacancies">
+<section class="vacancies mb-5">
     <div class="container">
-        <h1 class="vacancies__title">Вакансии</h1>
+        <h2 id="job-title">Заголовок вакансий</h2>
         <div class="pagetitle__crumbs crumbs">
-                    
-                    <ul class="crumbs__list">
+                    <ul class="crumbs__list" id="breadcrumb">
                     <li class="crumbs__point">
                         <a class="crumbs__link" href="https://special-materials.com/" title="Главная">Главная</a>
                     </li>
-                    <li class="crumbs__point crumbs__point--active">Вакансии</li></ul>
+                    <li class="crumbs__point">
+                        <a class="crumbs__link" href="vacancies.html">Вакансии</a>
+                    </li>
+                </ul>
                 </div>
-            <div class="card-container" id="jobs"></div>
+                <div class="job-details">
+
+                    <div><p id="job-description"></p></div>
+                    <div><span id="job-salary"></span></div>
+                    <button class="btn primary-btn button--second btn-details">Откликнуться</button>
+                </div>
             </div>
 </section>
+
 
 <div class="consultation template__section template__section--background">
     <div class="consultation__back lazy-back" ></div>
@@ -896,5 +903,7 @@ html body .template__section .container .content p>em>img{
 <script src="../js/jquery.fancybox.min.js"></script>
 <script src="../js/feather.min.js"></script>
 <script src="../js/qmedia.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/vacancy-details.js"></script>
 </body>
 </html>

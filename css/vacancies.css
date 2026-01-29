@@ -87,6 +87,29 @@
   background: #b9151b;
 }
 
+#job-title{
+    font-size: 2.375rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.job-details{
+    margin-top: 44px;
+}
+
+.job-description{
+    font-size: 17px;
+}
+
+#job-salary{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.btn-details{
+    border: 1px solid #D01C20;
+}
+
 @media (min-width: 1300px){
     .card-container{
         grid-template-columns: repeat(3, 1fr);
@@ -102,5 +125,18 @@
 @media (max-width: 768px){
     .card-container{
         grid-template-columns: 1fr;
+    }
+
+    .card{
+        width: 358px;
+        height: 317px;
+    }
+
+    .card-container{
+        justify-content: center;
+    }
+
+    .btn-details{
+        width: 100%;
     }
 }
