@@ -1,0 +1,27 @@
+.header{min-height:1px;position:relative}@media (max-width: 991px){.header{padding-top:92px}}.header__top{position:fixed;z-index:2;left:0;right:0;top:0;background-color:#808080}@media (min-width: 992px){.header__top{display:none}}.header__top .contact-list{font-size:0.9rem}.header__top .contact-list__link{color:#ffffff}.header__top .contact-list__icon{color:#ffffff}.header__top .search{height:46px !important;visibility:visible !important}.header__mobile{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.header__body{padding:16px 0;text-align:center}@media (min-width: 992px){.header__body{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:15px 0}}.header__phones{padding:16px 0}@media (min-width: 992px){.header__phones{padding:0 12px;margin:0 auto 0 0}}@media (max-width: 991px){.header__phones .contact-list__point{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}.header__callback{display:block;margin:0 auto;padding:8px 2px 4px;font-size:0.9rem;line-height:1.1;background-color:transparent;border:none;border-bottom:1px dashed #222;-webkit-transition:0.25s ease-in-out;transition:0.25s ease-in-out;cursor:pointer}@media (min-width: 768px){.header__callback{padding-top:4px}}@media (min-width: 1200px){.header__callback:hover{border-color:transparent}}.header__send{padding-top:8px;padding-bottom:16px}@media (min-width: 992px){.header__send{padding:0}}.header .logo{margin-left:auto;margin-right:auto}@media (min-width: 768px){.header .logo{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-left:0;margin-right:auto;width:auto}}.header .logo__image{width:220px;min-width:220px}.header .logo__slogan{width:auto}@media (min-width: 768px){.header .logo__slogan{margin-left:24px;padding-left:24px;margin-top:0;border-left:1px solid #e8e8e8;text-align:left}}.header .phone-link__icon{color:#8a8a8a}.open-mobile-menu{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:12px 0;color:#ffffff;font-weight:500;background-color:transparent;border:none}.open-mobile-menu .feather{margin-left:8px}.logo{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center;width:220px}.logo__image{width:100%}.logo__slogan{color:#222;font-size:0.9rem;line-height:1.2;margin-top:12px;width:100%}@media (min-width: 1200px){.logo__slogan{font-size:1rem}}
+.header__send a{
+    padding: 10px 3px 10px 8px;
+    -webkit-box-shadow: inset 0 0 0 1px #e8e8e8;
+    box-shadow: inset 0 0 0 1px #e8e8e8;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+
+    svg {
+        width: 26px;
+        fill: #222;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: #f2f2f2; /* мягкий серый фон */
+        transform: scale(0.88); /* уменьшение на ~12% */
+        box-shadow: inset 0 0 0 1px #ccc;
+
+        svg {
+            fill: #000; /* немного темнее при ховере */
+            background-color: #f2f2f2;
+        }
+    }
+}
