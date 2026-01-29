@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +42,8 @@
     <link rel="alternate" hreflang="en" href="https://en.special-materials.com//">
     <link rel="alternate" hreflang="x-default" href="https://special-materials.com//">
     <link rel="stylesheet" href="../css/reviews.css">
-
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/add-review.css">
     <!-- Google Tag Manager -->
     <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -217,8 +217,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
     </style>
-</head>
 
+    <style>
+    
+  </style>
+</head>
 <body class="template template--main">
     <header class="template__header header">
         <div class="header__top">
@@ -517,83 +520,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </header>
-
-    <section class="reviews">
-        <div class="container">
-            <h1 class="vacancies__title">Отзывы</h1>
+    
+<div class="container">
+            <h1 class="vacancies__title">Написать отзыв</h1>
             <div class="pagetitle__crumbs crumbs">
 
                 <ul class="crumbs__list">
                     <li class="crumbs__point">
                         <a class="crumbs__link" href="https://special-materials.com/" title="Главная">Главная</a>
                     </li>
-                    <li class="crumbs__point crumbs__point--active">Отзывы</li>
+                    <li class="crumbs__point">
+                        <a class="crumbs__link" href="reviews.html">Отзывы</a>
+                    </li>
+                    <li class="crumbs__point crumbs__point--active">Написать отзыв</li>
                 </ul>
             </div>
-            <div class="reviews__layout">
 
-                <!-- LEFT -->
-                <aside class="reviews__sidebar">
-                    <div class="reviews__rating-value">4.9</div>
-                    <div class="reviews__count">Отзывов 147</div>
-
-                    <div class="reviews__bars">
-                        <div class="reviews__bar">
-                            <span>★★★★★</span>
-                            <div class="line">
-                                <div style="width:90%"></div>
-                            </div>
-                        </div>
-                        <div class="reviews__bar">
-                            <span>★★★★</span>
-                            <div class="line">
-                                <div style="width:70%"></div>
-                            </div>
-                        </div>
-                        <div class="reviews__bar">
-                            <span>★★★</span>
-                            <div class="line">
-                                <div style="width:40%"></div>
-                            </div>
-                        </div>
-                        <div class="reviews__bar">
-                            <span>★★</span>
-                            <div class="line">
-                                <div style="width:20%"></div>
-                            </div>
-                        </div>
-                        <div class="reviews__bar">
-                            <span>★</span>
-                            <div class="line">
-                                <div style="width:10%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="button button--large button--second">
-                        <a href="add-reviews.html">Добавить отзыв</a>
-                    </button>
-                </aside>
-
-                <!-- RIGHT -->
-                <section class="reviews__content">
-                    <div class="reviews__top">
-                        <h3>Отзывы <span class="badge">147</span></h3>
-                        <div class="sort">Сортировать: по умолчанию</div>
-                    </div>
-
-                    <div id="reviews-list"></div>
-                </section>
-
-            </div>
+    <form class="form" id="reviewForm">
+      <div class="form__row">
+        <div class="form__group">
+          <label>Ваше имя</label>
+          <input type="text" id="name" placeholder="Введите имя" required />
         </div>
 
-        <div class="template__separ"></div>
+        <div class="form__group">
+          <label>Ваше отчество</label>
+          <input type="text" id="lastname" placeholder="Введите отчество" />
         </div>
-        </div>
-    </section>
+      </div>
 
-    <div class="consultation template__section template__section--background">
+      <label>Общая оценка <p>*</p></label>
+      <div class="rating">
+        <div class="stars" id="stars">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <div class="rating__value" id="ratingValue">0</div>
+      </div>
+
+      <div class="form__group">
+        <label>Напишите ваш отзыв</label>
+        <textarea id="text" placeholder="Введите текст отзыва" required></textarea>
+      </div>
+
+      <br />
+
+      <button class="button button--group" type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <script>
+    let currentRating = 0;
+    const stars = document.querySelectorAll(".star");
+    const ratingValue = document.getElementById("ratingValue");
+
+    stars.forEach(star => {
+      star.addEventListener("click", () => {
+        currentRating = star.dataset.value;
+        ratingValue.textContent = currentRating;
+
+        stars.forEach(s =>
+          s.classList.toggle("active", s.dataset.value <= currentRating)
+        );
+      });
+    });
+
+    document.getElementById("reviewForm").addEventListener("submit", e => {
+      e.preventDefault();
+
+      if (currentRating === 0) {
+        alert("Поставьте оценку");
+        return;
+      }
+
+      const review = {
+        name: document.getElementById("name").value,
+        lastname: document.getElementById("lastname").value,
+        rating: currentRating,
+        text: document.getElementById("text").value,
+        date: new Date().toLocaleDateString("ru-RU", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric"
+        })
+      };
+
+      console.log("Review:", review);
+      alert("Отзыв отправлен!");
+    });
+  </script>
+
+<div class="consultation template__section template__section--background">
         <div class="consultation__back lazy-back"></div>
         <div class="template__separ"></div>
         <div class="consultation__body container">
@@ -1076,6 +1096,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="../js/feather.min.js"></script>
     <script src="../js/qmedia.js"></script>
     <script src="../js/reviews.js"></script>
-</body>
 
+<script src="../js/script.js"></script>
+</body>
 </html>
